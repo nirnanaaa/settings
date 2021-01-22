@@ -20,6 +20,7 @@ module.exports = (robot, _, Settings = require('./lib/settings')) => {
     }
 
     const settingsModified = payload.commits.find(commit => {
+      console.log(commit);
       return commit.added.includes(Settings.FILE_NAME) ||
         commit.modified.includes(Settings.FILE_NAME)
     })
